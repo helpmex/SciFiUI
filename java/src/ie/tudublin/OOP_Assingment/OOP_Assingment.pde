@@ -9,12 +9,16 @@ inventory i;
 Map m;
 radio r;
 
+PImage Map;
+
 void setup(){
   size(800,800,P2D);
   i = new inventory();
   m = new Map();
   s = new stat();
   r = new radio();
+  
+  Map = loadImage("Map.png");
   
   statbutton[0]=90; //x
   statbutton[1]=70; //y

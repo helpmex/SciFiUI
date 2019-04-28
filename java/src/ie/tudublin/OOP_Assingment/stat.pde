@@ -24,7 +24,7 @@ class stat
   }
   
   void character(){
-    
+     //display image in middle with a few player statistics
   }
   
 }

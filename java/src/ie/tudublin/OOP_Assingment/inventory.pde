@@ -26,6 +26,8 @@ class inventory{
   }
   
   void items(){
+    //use keys to display items and their details ie press key 1-3 for items 1-3
+    //with each item display image of that item
     
     testbutton[0]=400; //x
     testbutton[1]=400; //y
