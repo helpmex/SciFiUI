@@ -4,22 +4,18 @@ int[] mapbutton = new int[5];
 int[] radiobutton = new int[5];
 int[] testbutton = new int[5];
 
+stat s;
+inventory i;
+Map m;
+radio r;
+
 void setup(){
   size(800,800,P2D);
-  /* button x, y, w, h, text, r, g, b
-  statbutton = new button(90,70,80,50,"Stat",0,255,0);
-  inventorybutton = new button(180,70,80,50,"Inventory",0,255,0);
-  mapbutton = new button(270,70,80,50,"Map",0,255,0);
-  radiobutton = new button(360,70,80,50,"Radio",0,255,0);
-    statbutton.update();
-  statbutton.render();
-  inventorybutton.update();
-  inventorybutton.render();
-  mapbutton.update();
-  mapbutton.render();
-  radiobutton.update();
-  radiobutton.render();
-  */
+  i = new inventory();
+  m = new Map();
+  s = new stat();
+  r = new radio();
+  
   statbutton[0]=90; //x
   statbutton[1]=70; //y
   statbutton[2]=80; //width
@@ -46,6 +42,7 @@ void setup(){
   
 }
 void draw(){
+  
   background(0);
   line(0,121,800,121);
   stroke(0,255,0);
@@ -77,9 +74,7 @@ void draw(){
   textSize(16);
   text("Map",293,105);
   
-  
   //radio button
-
   fill(0,255,0);
   rect(radiobutton[0],radiobutton[1],radiobutton[2],radiobutton[3]);
   fill(0,0,0);
@@ -88,20 +83,25 @@ void draw(){
   
   //stat();
   if(statbutton[4]==1){
-      stat();
+      s.display();
+      s.character();
   }
   if(inventorybutton[4]==1){
-      inventory();
+      i.display();
+      i.items();
   }
   
   
   if(mapbutton[4]==1){
-      Map();
+      m.display();
+      m.Image();
   }
   
   if(radiobutton[4]==1){
-      radio();
+      r.display();
+      r.audio();
   }
+  
   
 }
 
@@ -110,7 +110,6 @@ void mousePressed(){
   //(mouseY<(button[1]+button[3]) makes sure anything clicked to the left 
   //of the button doesnt activate the button 
   //(mouseY>(button[1])) makes sure of the right side
-  
   
   if((mouseY<(statbutton[1]+statbutton[3]))&&(mouseY>(statbutton[1]))){
     //(mouseX<(button[0]+button[2])) anything below the button
@@ -155,125 +154,16 @@ void mousePressed(){
           mapbutton[4]=0;
     }
   }
-  /*
-          testbutton[4]=0;
+  
   if((mouseY<(testbutton[1]+testbutton[3]))&&(mouseY>(testbutton[1]))){
     //(mouseX<(button[0]+button[2])) anything below the button
     //
     if((mouseX<(testbutton[0]+testbutton[2]))&&(mouseX>(testbutton[0]))){
           testbutton[4]=1;
+          radiobutton[4]=0;
+          statbutton[4]=0;
+          inventorybutton[4]=1;
+          mapbutton[4]=0;
     }
-  }
-  */
-  
-  
-}
-
-void stat(){
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(89, 639, 148, 40);
-  fill(0,0,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
-  text("word", 163, 656);
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(239,639,320,40);
-  fill(0,0,0);
-  text("word2",399,656);
-  
-  fill(0,255,0);
-  stroke(0,255,0);
-  rect(561,639,150,40);
-  fill(0,0,0);
-  textSize(15);
-  text("word3",636,656);
-}
-
-void inventory(){
-  
-  testbutton[0]=400; //x
-  testbutton[1]=400; //y
-  testbutton[2]=80; //width
-  testbutton[3]=50; //height
-  testbutton[4]=0;
-  
-  fill(0,255,0);
-  rect(testbutton[0],testbutton[1],testbutton[2],testbutton[3]);
-  fill(0,0,0);
-  textSize(16);
-  text("Radio",383,105);
-  
-    if(testbutton[4]==1){
-    radio();
-  }
-  
-  
-    fill(0,250,0);
-  stroke(0,255,0);
-  rect(89, 639, 148, 40);
-  fill(0,0,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
-  text("word", 163, 656);
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(239,639,320,40);
-  fill(0,0,0);
-  text("word2",399,656);
-  
-  fill(0,255,0);
-  stroke(0,255,0);
-  rect(561,639,150,40);
-  fill(0,0,0);
-  textSize(15);
-  text("word3",636,656);
-}
-void Map(){
-  
-      fill(0,250,0);
-  stroke(0,255,0);
-  rect(89, 639, 148, 40);
-  fill(0,0,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
-  text("word", 163, 656);
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(239,639,320,40);
-  fill(0,0,0);
-  text("word2",399,656);
-  
-  fill(0,255,0);
-  stroke(0,255,0);
-  rect(561,639,150,40);
-  fill(0,0,0);
-  textSize(15);
-  text("word3",636,656);
-}
-
-void radio(){
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(89, 639, 148, 40);
-  fill(0,0,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
-  text("word", 163, 656);
-  
-  fill(0,250,0);
-  stroke(0,255,0);
-  rect(239,639,320,40);
-  fill(0,0,0);
-  text("word2",399,656);
-  
-  fill(0,255,0);
-  stroke(0,255,0);
-  rect(561,639,150,40);
-  fill(0,0,0);
-  textSize(15);
-  text("word",636,656);
-  
+  } 
 }
