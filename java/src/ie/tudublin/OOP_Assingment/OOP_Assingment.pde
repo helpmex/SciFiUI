@@ -8,6 +8,7 @@ stat s;
 inventory i;
 Map m;
 radio r;
+drops[] d;
 
 PImage Map;
 PImage vaultboy;
@@ -18,6 +19,10 @@ void setup(){
   m = new Map();
   s = new stat();
   r = new radio();
+  d = new drops[100];
+  for(int i=0; i < 100; i++){
+    d[i] = new drops();
+  }
   
   Map = loadImage("Map.png");
   vaultboy = loadImage("vaultboy.jpg");
@@ -95,6 +100,7 @@ void draw(){
   if(inventorybutton[4]==1){
       i.display();
       i.items();
+      i.keyPressed();
   }
   
   
@@ -106,6 +112,11 @@ void draw(){
   if(radiobutton[4]==1){
       r.display();
       r.audio();
+      r.keyPressed();
+      for(int i =0; i < 100; i++){
+        d[i].rainfall();
+        d[i].show();
+      }
   }
   
   
@@ -172,4 +183,5 @@ void mousePressed(){
           mapbutton[4]=0;
     }
   } 
+  
 }
