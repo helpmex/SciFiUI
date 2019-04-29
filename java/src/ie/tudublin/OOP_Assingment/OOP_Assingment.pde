@@ -10,6 +10,7 @@ Map m;
 radio r;
 
 PImage Map;
+PImage vaultboy;
 
 void setup(){
   size(800,800,P2D);
@@ -19,6 +20,7 @@ void setup(){
   r = new radio();
   
   Map = loadImage("Map.png");
+  vaultboy = loadImage("vaultboy.jpg");
   
   statbutton[0]=90; //x
   statbutton[1]=70; //y
