@@ -189,5 +189,4 @@ void mousePressed(){
           mapbutton[4]=0;
     }
   } 
-  
 }
