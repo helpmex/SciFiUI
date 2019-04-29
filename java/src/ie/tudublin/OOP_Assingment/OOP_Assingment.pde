@@ -12,6 +12,7 @@ drops[] d;
 
 PImage Map;
 PImage vaultboy;
+PImage[] inventory = new PImage[4];
 
 void setup(){
   size(800,800,P2D);
@@ -20,6 +21,11 @@ void setup(){
   s = new stat();
   r = new radio();
   d = new drops[100];
+  
+  for(int i = 0; i<inventory.length; i++){
+    inventory[i] = loadImage("inventory"+i+".jpg");
+  }
+  
   for(int i=0; i < 100; i++){
     d[i] = new drops();
   }
