@@ -47,5 +47,4 @@ class stat
      imageMode(CENTER);
      image(vaultboy,400,323,249,324);
   }
-  
 }

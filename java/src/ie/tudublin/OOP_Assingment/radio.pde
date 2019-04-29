@@ -29,17 +29,17 @@ class radio
      fill(0,0,0);
      rect(120,150,250,40);
      fill(0,255,0);
-     text("thing1",130,175);
+     text("Channel 1",130,175);
      
      fill(0,0,0);
      rect(120,210,250,40);
      fill(0,255,0);
-     text("thing2",130,235);
+     text("Channel 2",130,235);
      
      fill(0,0,0);
      rect(120,270,250,40);
      fill(0,255,0);
-     text("thing3",130,295);
+     text("Channel 3",130,295);
      
        //display animation of radio for each audio file
     

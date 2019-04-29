@@ -10,7 +10,6 @@ class drops
      y = y + yspeed;
      yspeed = yspeed + 0.15;
      
-     
      if(y > ylimit){
        y = random(150,425);
        yspeed = random(2,5);
