@@ -1,21 +1,22 @@
 class stat
 {
   void display(){
-    
+  
+    //title
   fill(0,255,0);
   textSize(30);
   text("Todd Howard",300,50);
   
-  
+  //footer rect and text
   textSize(15);  
   fill(0,100,0);
   stroke(0,255,0);
   tint(0,255,0);
   rect(89, 639, 148, 40);
   fill(0,255,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
   text("HP   90/90", 95, 665);
   
+  //footer rect and text
   stroke(0,255,0);
   fill(0,100,0);
   tint(0,255,0);
@@ -24,6 +25,7 @@ class stat
   fill(0,255,0);
   text("LEVEL 1",245,665);
   
+  //footer rect and text
   fill(0,100,0);
   stroke(0,255,0);
   tint(0,255,0);
@@ -50,6 +52,7 @@ class stat
      textSize(25);
      text("Howard",354,610);
      
+     //load image within the rect in the middle of the screen
      imageMode(CENTER);
      image(vaultboy,400,323,249,324);
   }

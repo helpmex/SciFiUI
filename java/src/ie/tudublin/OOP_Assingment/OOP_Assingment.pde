@@ -30,11 +30,13 @@ void setup(){
   r = new radio();
   d = new drops[100];
   
+  //loads the sound files for the radio page using minim
   minim = new Minim(this);
   player = minim.loadFile( "17 - Dion - The wanderer (1).mp3");
   player2 = minim.loadFile("01 Fallout 4 Main Theme.mp3");
   player3 = minim.loadFile("02 The Commonwealth.mp3");
   
+  //loads array of images for the inventory page
   for(int i = 0; i<inventory.length; i++){
     inventory[i] = loadImage("inventory"+i+".jpg");
   }
@@ -43,27 +45,32 @@ void setup(){
     d[i] = new drops();
   }
   
+  //loads images for map and stat page
   Map = loadImage("Map.png");
   vaultboy = loadImage("vaultboy.jpg");
   
+  //co ordinates and size of statbutton
   statbutton[0]=90; //x
   statbutton[1]=70; //y
   statbutton[2]=80; //width
   statbutton[3]=50; //height
   statbutton[4]=0; //if button is being pressed 0 is not pressed 1 is pressed
   
+  //co ordinates and size of inventorybutton
   inventorybutton[0]=180; // x
   inventorybutton[1]=70; //y
   inventorybutton[2]=80; //w
   inventorybutton[3]=50; //h
   inventorybutton[4]=0; //0 = not pressed 1 = pressed
   
+    //co ordinates and size of mapbutton
   mapbutton[0]=270;
   mapbutton[1]=70;
   mapbutton[2]=80;
   mapbutton[3]=50;
   mapbutton[4]=0;
   
+  //co ordinates and size of radiobutton
   radiobutton[0]=360;
   radiobutton[1]=70;
   radiobutton[2]=80;
@@ -73,6 +80,7 @@ void setup(){
 }
 void draw(){
   
+  //outline of the ui
   background(0);
   line(0,121,800,121);
   stroke(0,255,0);
@@ -111,27 +119,28 @@ void draw(){
   textSize(16);
   text("Radio",383,105);
   
-  //stat();
+  //if stat button is clicked then display stat page
   if(statbutton[4]==1){
       s.display();
       s.character();
   }
+    //if inven button is clicked then display inven page
   if(inventorybutton[4]==1){
       i.display();
       i.items();
       i.keyPressed();
   }
-  
-  
+    //if map button is clicked then display map page
   if(mapbutton[4]==1){
       m.display();
       m.Image();
   }
-  
+    //if radio button is clicked then display radio page
   if(radiobutton[4]==1){
       r.display();
-      r.audio();
       r.keyPressed();
+      
+      //displays 100 raindrop lines
       for(int i =0; i < 100; i++){
         d[i].rainfall();
         d[i].show();
@@ -142,15 +151,24 @@ void draw(){
 }
 
 void mousePressed(){
+  /*
+  (mouseY<(button[1]+button[3])
+  (mouseY>(button[1]))
+  if user clicks above or below the button it will not activare the button
   
-  //(mouseY<(button[1]+button[3]) makes sure anything clicked to the left 
-  //of the button doesnt activate the button 
-  //(mouseY>(button[1])) makes sure of the right side
+  if((mouseX<(statbutton[0]+statbutton[2]))&&(mouseX>(statbutton[0])))
+  
+  if the user clicks to the left or right of the button it wont activate button
+  
+  these if statements ensure that the user has to click inside the rect of the button
+  to activate the button
+  
+  */
   
   if((mouseY<(statbutton[1]+statbutton[3]))&&(mouseY>(statbutton[1]))){
-    //(mouseX<(button[0]+button[2])) anything below the button
-    //
     if((mouseX<(statbutton[0]+statbutton[2]))&&(mouseX>(statbutton[0]))){
+         //below the code activates the button that the user pressed and if deactivates 
+         //the other buttons
           statbutton[4]=1;
           inventorybutton[4]=0;
           mapbutton[4]=0;
@@ -159,9 +177,9 @@ void mousePressed(){
   }
   
   if((mouseY<(inventorybutton[1]+inventorybutton[3]))&&(mouseY>(inventorybutton[1]))){
-    //(mouseX<(button[0]+button[2])) anything below the button
-    //
     if((mouseX<(inventorybutton[0]+inventorybutton[2]))&&(mouseX>(inventorybutton[0]))){
+         //below the code activates the button that the user pressed and if deactivates 
+         //the other buttons
           inventorybutton[4]=1;
           statbutton[4]=0;
           mapbutton[4]=0;
@@ -170,9 +188,9 @@ void mousePressed(){
   }
   
   if((mouseY<(mapbutton[1]+mapbutton[3]))&&(mouseY>(mapbutton[1]))){
-    //(mouseX<(button[0]+button[2])) anything below the button
-    //
     if((mouseX<(mapbutton[0]+mapbutton[2]))&&(mouseX>(mapbutton[0]))){
+         //below the code activates the button that the user pressed and if deactivates 
+         //the other buttons
           mapbutton[4]=1;
           statbutton[4]=0;
           inventorybutton[4]=0;
@@ -181,25 +199,13 @@ void mousePressed(){
   }
   
   if((mouseY<(radiobutton[1]+radiobutton[3]))&&(mouseY>(radiobutton[1]))){
-    //(mouseX<(button[0]+button[2])) anything below the button
-    //
     if((mouseX<(radiobutton[0]+radiobutton[2]))&&(mouseX>(radiobutton[0]))){
+         //below the code activates the button that the user pressed and if deactivates 
+         //the other buttons
           radiobutton[4]=1;
           statbutton[4]=0;
           inventorybutton[4]=0;
           mapbutton[4]=0;
     }
   }
-  
-  if((mouseY<(testbutton[1]+testbutton[3]))&&(mouseY>(testbutton[1]))){
-    //(mouseX<(button[0]+button[2])) anything below the button
-    //
-    if((mouseX<(testbutton[0]+testbutton[2]))&&(mouseX>(testbutton[0]))){
-          testbutton[4]=1;
-          radiobutton[4]=0;
-          statbutton[4]=0;
-          inventorybutton[4]=1;
-          mapbutton[4]=0;
-    }
-  } 
-}
+} 
