@@ -58,7 +58,7 @@ void keyPressed(){
      fill(0,100,0);
      rect(120,150,250,40);
      fill(0,255,0);
-     text("thing1",130,175);
+     text("Channel 1",130,175);
      //arc(x,y,w,h,start,stop)
      //arc(400,300,150,150,radians(180),radians(180));
      line(400,300,450,350);
@@ -73,7 +73,7 @@ void keyPressed(){
       fill(0,100,0);
       rect(120,210,250,40);
       fill(0,255,0);
-      text("thing2",130,235);
+      text("Channel 2",130,235);
       
       line(400,300,450,250);
       line(400,300,450,350);
@@ -99,14 +99,30 @@ void keyPressed(){
       fill(0,100,0); 
       rect(120,270,250,40);
       fill(0,255,0);
-      text("thing3",130,295);
-      line(400,425,450,375);
-      line(450,375,500,325);
-      line(500,325,550,275);
-      line(550,275,600,275);
-      line(600,275,650,225);
-      line(650,225,675,225);
-      break;
+      text("Channel 3",130,295);
+      stroke(0,255,0);
+      
+      int c = 375;
+      int c1 = 700;
+      int v = 125;
+      int v1 = 450;
+      int i;
+     
+      for(i=0; i<6; i++){
+        line(c += 25,v += 25,c1 = c1 - 25,v);
+        line(c,v1 = v1-25,c1,v1);
+      }
+     
+      c = 375; //n
+      c1 = 700; //n1
+      v = 125; //b
+      v1 = 450; //b1    
+     
+      for(i=0; i<6; i++){
+        line(c += 25, v += 25, c, v1 = v1 - 25);
+        line(c1 = c1 -25,v,c1,v1);
+      }
+       break;
     }
   }
 }

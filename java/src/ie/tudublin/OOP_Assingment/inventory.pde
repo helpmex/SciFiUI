@@ -1,6 +1,5 @@
 class inventory{
-  
-  
+   
  void display(){
    
   fill(0,255,0);
@@ -13,7 +12,6 @@ class inventory{
   tint(0,255,0);
   rect(89, 639, 148, 40);
   fill(0,255,0);
-  //text in middle of rectangle = x + width/2 and y + height/2
   text("Weight 69/420", 95, 665);
   
   fill(0,100,0);
