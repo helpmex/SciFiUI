@@ -2,6 +2,12 @@ class stat
 {
   void display(){
     
+  fill(0,255,0);
+  textSize(30);
+  text("Todd Howard",300,50);
+  
+  
+  textSize(15);  
   fill(0,100,0);
   stroke(0,255,0);
   tint(0,255,0);

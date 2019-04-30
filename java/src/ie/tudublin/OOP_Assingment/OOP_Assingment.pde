@@ -1,3 +1,10 @@
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer player;
+AudioPlayer player2;
+AudioPlayer player3;
+
 int[] statbutton = new int[5];
 int[] inventorybutton = new int[5];
 int[] mapbutton = new int[5];
@@ -14,6 +21,7 @@ PImage Map;
 PImage vaultboy;
 PImage[] inventory = new PImage[4];
 
+
 void setup(){
   size(800,800,P2D);
   i = new inventory();
@@ -21,6 +29,11 @@ void setup(){
   s = new stat();
   r = new radio();
   d = new drops[100];
+  
+  minim = new Minim(this);
+  player = minim.loadFile( "17 - Dion - The wanderer (1).mp3");
+  player2 = minim.loadFile("01 Fallout 4 Main Theme.mp3");
+  player3 = minim.loadFile("02 The Commonwealth.mp3");
   
   for(int i = 0; i<inventory.length; i++){
     inventory[i] = loadImage("inventory"+i+".jpg");

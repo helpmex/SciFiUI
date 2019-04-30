@@ -53,8 +53,22 @@ class radio
   }
   
 void keyPressed(){
+         
+    player.pause();
+    player2.pause();
+    player3.pause();
   switch(key) {
+   
     case '1':
+    player.pause();
+    player2.pause();
+    player3.pause();
+    if(player.position() == player.length()) {
+      player.rewind();
+      player.play();
+    }else{
+      player.play();
+    }
      fill(0,100,0);
      rect(120,150,250,40);
      fill(0,255,0);
@@ -70,6 +84,15 @@ void keyPressed(){
      break;
     
     case '2':
+    player.pause();
+    player2.pause();
+    player3.pause();
+       if(player2.position() == player2.length()) {
+      player2.rewind();
+      player2.play();
+    }else{
+      player2.play();
+    }
       fill(0,100,0);
       rect(120,210,250,40);
       fill(0,255,0);
@@ -95,7 +118,16 @@ void keyPressed(){
       break;
         
         
-    case '3':  
+    case '3':
+    player.pause();
+    player2.pause();
+    player3.pause();
+    if(player3.position() == player3.length()) {
+      player3.rewind();
+      player3.play();
+    }else{
+      player3.play();
+    }
       fill(0,100,0); 
       rect(120,270,250,40);
       fill(0,255,0);

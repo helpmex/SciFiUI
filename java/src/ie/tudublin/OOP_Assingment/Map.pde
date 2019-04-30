@@ -3,6 +3,10 @@ class Map
   
   void display(){
     
+  fill(0,255,0);
+  textSize(30);
+  text("The CommonWealth",260,50);
+    
     fill(0,100,0);
     tint(0,255,0);
     stroke(0,255,0);
