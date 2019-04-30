@@ -1,6 +1,5 @@
 class Map
 {
-  
   void display(){
     
     //title
