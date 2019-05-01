@@ -134,16 +134,16 @@ In this sample of code I display the image with its description of each item, wh
    
    The code above was the code used to create the little graphic within the radio graph when the number 3 is inputted by the user. the code creates lines that decrease in length with each iteration of the loop. This was interesting to code.
    
-   ![An image](OOP-Assingment1.PNG)
+   ![An image](images/OOP-Assingment1.PNG)
    This is the stats page
    
-   ![An image](OOP-Assingment2.PNG)
+   ![An image](images/OOP-Assingment2.PNG)
    This is the Inventory page
 
-   ![An image](OOP-Assingment3.PNG)
+   ![An image](images/OOP-Assingment3.PNG)
    This is the Map page
    
-   ![An image](OOP-Assingment4.PNG)
+   ![An image](images/OOP-Assingment4.PNG)
    This is the Radio page
    
    ![YouTube](https://youtu.be/dxbvBceVCAU)
